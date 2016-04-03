@@ -86,18 +86,18 @@ Hi there, This is served from appserv1!Connection closed by foreign host.
 This class will set up your application server and currently comes with (as a built in part of the module) an application to respond to an HTTP GET request with some text reporting the hostname of the application server. It will also open up firewall ports.
 
 The class parameters are:
-`$app_user` - This is the name of the user who will own the app when it is deployed (defaults to appuser).
-`$app_group` - This is the group that the user will be part of (defaults to users).
-`$app_shell` - This is the users default shell (defaults to /bin/bash).
-`$app_root` - This is the location where the application will be deployed to (defaults to /var/www).
-`$listen_port` - This is the port that the application will bind to on the app servers (defaults to 8080). 
+* `$app_user` - This is the name of the user who will own the app when it is deployed (defaults to appuser).
+* `$app_group` - This is the group that the user will be part of (defaults to users).
+* `$app_shell` - This is the users default shell (defaults to /bin/bash).
+* `$app_root` - This is the location where the application will be deployed to (defaults to /var/www).
+* `$listen_port` - This is the port that the application will bind to on the app servers (defaults to 8080). 
 
 ### haappserver::nginxlb
 
 This class will set up a nginx webserver on the node. It will be configured to load balance between the `$pool_members` and listen on `$web_listen_port` (which will be allowed through the firewall).
 
 The class parameters are:
-`$pool_members`    - This is a list of hosts/IP Addresses and ports through which to load balance, in a round robin fashion.
-`$web_listen_port` - This is the port with which nginx will listen on for end user connections.
-`$nginx_docroot`   - This is the nginx_docroot. It is largely irrelevant as we aren't serving content from this node, but is included so that it can be altered (e.g. to avoid a clash with other docroots).
+* `$pool_members`    - This is a list of hosts/IP Addresses and ports through which to load balance, in a round robin fashion.
+* `$web_listen_port` - This is the port with which nginx will listen on for end user connections.
+* `$nginx_docroot`   - This is the nginx_docroot. It is largely irrelevant as we aren't serving content from this node, but is included so that it can be altered (e.g. to avoid a clash with other docroots).
 
