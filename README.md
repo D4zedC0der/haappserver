@@ -12,6 +12,19 @@ Use the `haappserver::appserver` for nodes where the application is to be deploy
 
 To install this module, create a directory called "haappserver" in the modules directory of your puppet-server/master and clone/download the contents of this git repo to that location.
 
+## Dependencies
+This module uses the following modules:
+* jfryman/nginx
+* scottyc/golang
+* puppetlabs/firewall
+
+You can install these with the following commands:
+```
+puppet module install jfryman-nginx
+puppet module install scottyc-golang
+puppet module install puppetlabs-firewall
+```
+
 ## Quick Start
 Defaults are in place for all but one argument (pool_members) and so it is very easy to get up and running. Below is an example of the minimum configuration required in your "site.pp" or equiv.
 
